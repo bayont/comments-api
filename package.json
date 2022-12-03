@@ -4,7 +4,7 @@
   "description": "Task 1 of the Go on Board recruitment process",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./bin/www",
+    "start": "nodemon --exec babel-node -r dotenv/config ./bin/www",
     "test": "jest"
   },
   "author": "",
