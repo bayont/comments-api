@@ -5,7 +5,7 @@ import { Comment } from '../db/models/comment';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    const comments = await Comment.findAll();
+    const comments = await Comment.findAll({ order: [['createdAt', 'DESC']] });
     res.send(JSON.stringify(comments, null, 2));
 });
 router.post('/', async (req, res, next) => {
