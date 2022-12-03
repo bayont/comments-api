@@ -23,6 +23,12 @@ it('endpoint POST /comments', async () => {
   checkItemStructure(body);
 });
 
+it('endpoint POST /comments invalid body', async () => {
+  const brokenComments = [{}, { message: "abc" }, { author: "abc" }];
+  for (const comment of brokenComments)
+    await request.post('/comments').send(comment).expect(400);
+})
+
 it('endpoint GET /comments', async () => {
   const response = await request.get('/comments').expect(200);
   const body = JSON.parse(response.text);
