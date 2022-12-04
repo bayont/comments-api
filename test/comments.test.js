@@ -17,7 +17,7 @@ const checkItemStructure = function (item) {
 
 it('endpoint POST /comments', async () => {
   //empty comment doesn't pass my validation
-  const comment = { message: "Test message", author: "Test author" };
+  const comment = { message: "Zadanie rekrutacyjne Coffee Media", author: "Fabian Fetter" };
   const response = await request.post('/comments').send(comment).expect(200);
   const body = JSON.parse(response.text);
   checkItemStructure(body);
