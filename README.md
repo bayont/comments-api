@@ -1,4 +1,4 @@
-# Coffee Media recruitment task - API
+# comments-api
 
 ## Configuration
 
